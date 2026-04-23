@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Animación Espacio</title>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: white;
+    overflow: hidden;
+}
+
+#contenedor{
+    width: 400px;
+    height: 200px;
+    border: 1px solid white;
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+    background: black;
+}
+.estrellas{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        50px 100px white,
+        120px 50px white,
+        200px 150px white,
+        300px 80px white,
+        350px 120px white,
+        80px 170px white,
+        250px 30px white,
+        150px 180px white,
+        320px 60px white,
+        370px 190px white;
+        
+    animation: moverEstrellas 20s linear infinite;
+}
+
+@keyframes moverEstrellas {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-200px);
+    }
+}
+
+#cuadrito{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 60px;
+    left: -100px;
+    animation: moverCohete 5s linear infinite;
+}
+
+#cuadrito img{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+@keyframes moverCohete {
+    0% {
+        left: -100px;
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        left: 450px;
+        transform: rotate(0deg);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="contenedor">
+
+    <div class="estrellas"></div>
+
+    <div id="cuadrito">
+        <img src="img/cohete.gif" alt="cohete">
+    </div>
+
+</div>
+
+</body>
+</html>
